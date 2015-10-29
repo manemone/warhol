@@ -1,0 +1,6 @@
+= form_for @image do |f|
+  = image_tag @image.image.url if @image.image?
+  = f.label :image
+  = f.file_field :image
+  = f.hidden_field :image_cache
+  = f.submit
