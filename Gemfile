@@ -37,6 +37,15 @@ gem 'carrierwave'
 gem 'haml-rails'
 gem 'erb2haml'
 
+group :development do
+  # cool, easy-to-understand error view
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # advanced debugging feature for pry
+  gem 'pry-byebug'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
