@@ -61,4 +61,5 @@ Session.vim
 .netrwhist
 *~
 
-
+# uploaded images
+/public/uploads/*
