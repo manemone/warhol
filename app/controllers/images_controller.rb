@@ -2,13 +2,27 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
   end
-  
+
   def create
     begin
       @image = Image.create!(image_params)
-      redirect_to image_url(@image)
-    rescue
-      redirect_to :new
+      respond_to do |f|
+        f.json do
+          render 'create'
+        end
+        f.html do
+          redirect_to image_url(@image)
+        end
+      end
+    rescue => e
+      respond_to do |f|
+        f.json do
+          render json: { status: '500', message: "oops!" }
+        end
+        f.html do
+          redirect_to :new
+        end
+      end
     end
   end
 
@@ -16,7 +30,14 @@ class ImagesController < ApplicationController
     begin
       @image = Image.find(params[:id])
     rescue
-      redirect_to :new
+      respond_to do |f|
+        f.json do
+          render json: { status: '404', message: "image not found" }
+        end
+        f.html do
+          redirect_to :new
+        end
+      end
     end
   end
 
