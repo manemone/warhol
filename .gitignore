@@ -64,5 +64,8 @@ Session.vim
 # uploaded images
 /public/uploads/*
 
+# precompiled asset files
+/public/assets/*
+
 # dotenv files
 /.env
