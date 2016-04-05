@@ -37,6 +37,8 @@ gem 'carrierwave'
 gem 'haml-rails'
 gem 'erb2haml'
 
+gem 'dotenv-rails'
+
 group :development do
   # cool, easy-to-understand error view
   gem 'better_errors'
@@ -56,4 +58,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

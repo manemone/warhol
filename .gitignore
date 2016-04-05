@@ -63,3 +63,6 @@ Session.vim
 
 # uploaded images
 /public/uploads/*
+
+# dotenv files
+/.env
