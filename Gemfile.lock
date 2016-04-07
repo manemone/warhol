@@ -143,6 +143,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    revision_plate (0.1.2)
+      rack
     ruby_parser (3.7.2)
       sexp_processor (~> 4.1)
     sass (3.4.19)
@@ -198,6 +200,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   rails (= 4.2.3)
+  revision_plate
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -205,3 +208,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.11.2
