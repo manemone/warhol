@@ -39,6 +39,10 @@ gem 'erb2haml'
 
 gem 'dotenv-rails'
 
+# login with Github account
+gem 'omniauth'
+gem 'omniauth-github'
+
 # add routes
 gem 'revision_plate', require: 'revision_plate/rails'
 
