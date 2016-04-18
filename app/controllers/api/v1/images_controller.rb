@@ -1,14 +1,11 @@
-class ImagesController < ApplicationController
-  def new
-    @image = Image.new
-  end
+class Api::V1::ImagesController < Api::V1::ApplicationController
+  before_action :authenticate
 
   def create
     begin
       @image = Image.create!(image_params)
-      redirect_to image_url(@image)
     rescue => e
-      redirect_to :new
+      render json: { status: '500', message: "oops!" }
     end
   end
 
@@ -16,7 +13,7 @@ class ImagesController < ApplicationController
     begin
       @image = Image.find(params[:id])
     rescue
-      redirect_to :new
+      render json: { status: '404', message: "image not found" }
     end
   end
 

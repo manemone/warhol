@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :api_keys
 
+  scope :find_by_valid_token, -> (t) { joins(:api_keys).where(api_keys: { access_token: t, active: true }) }
+
   before_create :ensure_to_have_at_least_one_api_key
 
   def self.create_with_omniauth(auth)
