@@ -1,0 +1,14 @@
+- content_for :content do
+  %nav.navbar.navbar-light.bg-faded
+    .container
+      = link_to root_path, class: "navbar-brand" do
+        warhol
+      %ul.nav.navbar-nav.pull-md-right
+        %li.nav-item
+          = link_to '/logout', class: "nav-link" do
+            Sign out
+  
+  .container
+    = yield
+
+= render file: "/layouts/application"

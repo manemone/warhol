@@ -1,6 +1,3 @@
-- if logged_in?
-  = link_to 'Sign out', '/logout'
-
 = form_for @image do |f|
   = image_tag @image.image.url if @image.image?
   = f.label :image

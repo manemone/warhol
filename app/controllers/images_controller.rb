@@ -1,4 +1,4 @@
-class ImagesController < ApplicationController
+class ImagesController < LoggedInController
   def new
     @image = Image.new
   end
