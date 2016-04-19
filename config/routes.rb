@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'images#new'
+  root 'sessions#new'
 
   resources :images, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :destroy]
 
   # user authentication
   get 'auth/:provider/callback', to: 'sessions#callback'
