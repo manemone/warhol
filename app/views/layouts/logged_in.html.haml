@@ -3,6 +3,13 @@
     .container
       = link_to root_path, class: "navbar-brand" do
         warhol
+      %ul.nav.navbar-nav.pull-md-left
+        %li.nav-item
+          = link_to new_image_path, class: "nav-link" do
+            New image
+        %li.nav-item
+          = link_to edit_user_path, class: "nav-link" do
+            Your profile
       %ul.nav.navbar-nav.pull-md-right
         %li.nav-item
           = link_to '/logout', class: "nav-link" do
