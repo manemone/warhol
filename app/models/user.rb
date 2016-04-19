@@ -14,6 +14,16 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.find_and_update(auth)
+    user = find_by(provider: auth['provider'], uid: auth['uid'])
+    user&.update(
+      name: auth['info']['nickname'],
+      image_url: auth['info']['image']
+    )
+
+    user
+  end
+
   private
 
   def ensure_to_have_at_least_one_api_key
