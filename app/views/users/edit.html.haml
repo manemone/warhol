@@ -1,0 +1,13 @@
+.row
+  .col-md-3
+    .avatar
+      = image_tag current_user.image_url, class: "img-rounded"
+    %h1.name
+      = current_user.name
+  .col-md-9
+    .card
+      %h6.card-header
+        Access token
+      .card-block
+        %p.card-text
+          = current_user.current_api_key.access_token

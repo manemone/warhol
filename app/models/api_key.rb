@@ -1,6 +1,9 @@
 class ApiKey < ActiveRecord::Base
   belongs_to :user
 
+  scope :active, -> { where(active: true) }
+  scope :valid, -> { where("? < expires_at", Time.now) }
+
   before_create :generate_access_token
   before_create :set_expiration
   before_create :set_active

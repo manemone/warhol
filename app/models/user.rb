@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     user
   end
 
+  def current_api_key
+    api_keys.active.valid.last
+  end
+
   private
 
   def ensure_to_have_at_least_one_api_key
