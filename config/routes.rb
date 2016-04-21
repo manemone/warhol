@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :images, only: [:new, :create, :show]
-  resource :user, only: [:edit, :update]
+  resource :user, only: [:show] do
+    resource :api_key, only: [:update]
+  end
   resources :sessions, only: [:new, :destroy]
 
   # user authentication

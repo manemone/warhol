@@ -29,6 +29,15 @@ class User < ActiveRecord::Base
     api_keys.active.valid.last
   end
 
+  def reset_api_key!
+    self.class.transaction do
+      current_api_key.expire!
+      api_keys.create!
+    end
+
+    current_api_key
+  end
+
   private
 
   def ensure_to_have_at_least_one_api_key

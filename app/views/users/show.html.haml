@@ -5,9 +5,11 @@
     %h1.name
       = current_user.name
   .col-md-9
-    .card
+    .card.access_token
       %h6.card-header
         Access token
       .card-block
-        %p.card-text
+        %p.card-text.clearfix
           = current_user.current_api_key.access_token
+          = link_to user_api_key_path, method: :put, class: "btn btn-sm btn-danger pull-md-right" do
+            Reset token

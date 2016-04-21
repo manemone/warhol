@@ -5,4 +5,14 @@
       height: auto;
     }
   }
+
+  .access_token {
+    .card-header {
+      margin-bottom: 0;
+    }
+
+    .card-text {
+      line-height: 2.0;
+    }
+  }
 }

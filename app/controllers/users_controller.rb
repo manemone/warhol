@@ -1,7 +1,4 @@
 class UsersController < LoggedInController
-  def edit
-  end
-
-  def update
+  def show
   end
 end

@@ -16,6 +16,10 @@ class ApiKey < ActiveRecord::Base
     self.active = true
   end
 
+  def expire!
+    self.update! active: false
+  end
+
   def set_expiration
     self.expires_at = Time.now.years_since(50)
   end
