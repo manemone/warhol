@@ -1,0 +1,10 @@
+- content_for :content do
+  %nav.navbar.navbar-light.bg-faded
+    .container
+      = link_to root_path, class: "navbar-brand" do
+        warhol
+  
+  .container.main
+    = yield
+
+= render file: "/layouts/application"

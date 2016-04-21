@@ -1,1 +1,15 @@
-= link_to 'Githubアカウントでログイン', '/auth/github'
+.login.card.text-xs-center.center-block
+  .card-block
+    %h3.card-title
+      Sign in / Sign up
+    .card-block
+      %blockquote.card-blockquote
+        %p.text-muted
+          In 15 seconds
+          %br
+          everybody will have
+          %br
+          %strong
+            their own image store.
+    = link_to '/auth/github', class: "btn btn-primary-outline" do
+      Begin with your Gitub account
