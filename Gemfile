@@ -46,7 +46,11 @@ gem 'omniauth-github'
 # add routes
 gem 'revision_plate', require: 'revision_plate/rails'
 
+# css framework
 gem 'bootstrap', '~> 4.0.0.alpha3'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
