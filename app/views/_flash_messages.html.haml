@@ -1,0 +1,13 @@
+- if flash[:alert].present?
+  .alert.alert-danger{ role: "alert" }
+    %button.close{ data: { dismiss: "alert" }, "aria-label" => "close" }
+      %span{ "aria-hidden" => true }
+        &times;
+    = flash[:alert]
+
+- if flash[:notice].present?
+  .alert.alert-success{ role: "alert" }
+    %button.close{ data: { dismiss: "alert" }, "aria-label" => "close" }
+      %span{ "aria-hidden" => true }
+        &times;
+    = flash[:notice]
