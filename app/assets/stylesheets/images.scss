@@ -6,4 +6,20 @@
       margin-bottom: 0;
     }
   }
+
+  .image {
+    img {
+      min-width: 100%;
+    }
+
+    .image-info {
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(.06,.84,.12,.93) 0s;
+
+      &:hover {
+        opacity: 1.0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
 }
