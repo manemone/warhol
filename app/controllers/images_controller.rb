@@ -1,6 +1,11 @@
 class ImagesController < LoggedInController
-  def new
-    @image = Image.new
+  before_action :set_page, only: [:index]
+
+  DEFAULT_PER_PAGE_NUM = 20
+
+  def index
+    @new_image = Image.new
+    @images = Image.page(@page).per(DEFAULT_PER_PAGE_NUM)
   end
 
   def create
@@ -24,5 +29,9 @@ class ImagesController < LoggedInController
 
   def image_params
     params.require(:image).permit(:image, :image_cache)
+  end
+
+  def set_page
+    @page = params[:page] || 1
   end
 end

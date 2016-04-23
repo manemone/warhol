@@ -1,0 +1,19 @@
+.row.new_image
+  .col-md-12
+    %h4
+      Upload new image
+    = form_for @new_image do |f|
+      = image_tag @new_image.image.url if @new_image.image?
+      = f.label :image
+      = f.file_field :image
+      = f.hidden_field :image_cache
+      = f.submit
+
+.row.gallery
+  .col-md-12
+    %h4
+      Uploaded images
+    .card-columns
+      - @images.each do |image|
+        .card
+          = image_tag image.image.url, class: "card-img-top img-fluid"

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'sessions#new'
 
-  resources :images, only: [:new, :create, :show]
+  resources :images, only: [:index, :create, :show]
   resource :user, only: [:show] do
     resource :api_key, only: [:update]
   end
