@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   
   def redirect_logged_in_users
     if logged_in?
-      redirect_to new_image_path
+      redirect_to images_path
     end
   end
 end

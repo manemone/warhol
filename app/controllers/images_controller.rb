@@ -13,7 +13,7 @@ class ImagesController < LoggedInController
       @image = Image.create!(image_params)
       redirect_to image_url(@image)
     rescue => e
-      redirect_to :new
+      redirect_to images_url
     end
   end
 
@@ -21,7 +21,7 @@ class ImagesController < LoggedInController
     begin
       @image = Image.find(params[:id])
     rescue
-      redirect_to :new
+      redirect_to images_url
     end
   end
 
