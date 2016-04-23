@@ -13,7 +13,12 @@
   .col-md-12
     %h4
       Uploaded images
+
+    = paginate @images, window: 3, outer_window: 1
+
     .card-columns
       - @images.each do |image|
         .card
           = image_tag image.image.url, class: "card-img-top img-fluid"
+
+    = paginate @images, window: 3, outer_window: 1
