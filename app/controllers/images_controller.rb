@@ -5,15 +5,16 @@ class ImagesController < LoggedInController
 
   def index
     @new_image = Image.new
-    @images = Image.page(@page).per(DEFAULT_PER_PAGE_NUM)
+    @images = Image.order(created_at: :desc)
+      .page(@page).per(DEFAULT_PER_PAGE_NUM)
   end
 
   def create
     begin
       @image = Image.create!(image_params)
-      redirect_to image_url(@image)
+      redirect_to images_url, notice: "Your image uploaded successfully."
     rescue => e
-      redirect_to images_url
+      redirect_to images_url, alert: "Could not upload your image."
     end
   end
 
