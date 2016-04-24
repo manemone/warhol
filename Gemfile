@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'haml-rails'
 gem 'erb2haml'
