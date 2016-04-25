@@ -48,6 +48,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  # maximum width/height is as 5K resolution
+  process resize_to_fit: [5120, 5120]
+
   # store image dimensions
   process :store_dimensions
 
