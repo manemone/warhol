@@ -1,4 +1,4 @@
-.images_controller {
+.images_controller.index_action {
   .row {
     margin-bottom: 2rem;
 
@@ -20,6 +20,25 @@
         opacity: 1.0;
         background-color: rgba(0, 0, 0, 0.5);
       }
+    }
+  }
+}
+
+.images_controller.show_action {
+  .card.info {
+    word-wrap: break-word;
+  }
+
+  @media screen and (min-width: 544px) {
+    .card.image {
+      .card-img {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .card.info {
+      width: 33.333%;
     }
   }
 }

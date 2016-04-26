@@ -22,11 +22,7 @@
           = link_to image_path(image) do
             = image_tag image.image.url, class: "card-img img-fluid"
             .card-img-overlay.image-info
-              .card-text
-                %dl
-                  %dt url
-                  %dd= image.image.url
-                  %dt uploaded_at
-                  %dd= image.created_at
+              %p.card-text
+                = "#{image.width}x#{image.height}"
 
     = paginate @images, window: 3, outer_window: 1
