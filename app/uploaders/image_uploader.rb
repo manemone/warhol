@@ -49,7 +49,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # maximum width/height is as 5K resolution
-  process resize_to_fit: [5120, 5120]
+  IMAGE_SIZE_LIMIT = 5120
+  process resize_to_limit: [IMAGE_SIZE_LIMIT, IMAGE_SIZE_LIMIT]
 
   # store image dimensions
   process :store_dimensions
