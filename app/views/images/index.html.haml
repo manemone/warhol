@@ -22,7 +22,10 @@
           = link_to image_path(image) do
             = image_tag image.image.url, class: "card-img img-fluid"
             .card-img-overlay.image-info
-              %p.card-text
+              %p.card-text.size
                 = "#{image.width}x#{image.height}"
+              = link_to image_path(image), method: :delete, class: "pull-md-right" do
+                %button.close{ "aria-label" => "Close" }
+                  %span{ "aria-hidden" => true } &times;
 
     = paginate @images, window: 3, outer_window: 1
