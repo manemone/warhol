@@ -26,6 +26,18 @@ class ImagesController < LoggedInController
     end
   end
 
+  def destroy
+    begin
+      @image = Image.find(params[:id])
+      @image.destroy!
+      redirect_to images_url, notice: "Successfully deleted the image."
+    rescue ActiveRecord::RecordNotFound
+      redirect_to images_url, alert: "Specified image not found."
+    rescue
+      redirect_to image_url(@image), alert: "Could not destroy the image."
+    end
+  end
+
   private
 
   def image_params
