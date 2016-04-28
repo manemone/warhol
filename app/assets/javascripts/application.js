@@ -14,5 +14,13 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.lazyload.min.js
 //= require turbolinks
 //= require_tree .
+
+$(document).on('ready page:load', function() {
+  $("img.lazy").lazyload({
+    threshold: 200,
+    failure_limit : 10
+  });
+});

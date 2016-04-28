@@ -8,6 +8,8 @@
   }
 
   .image {
+    position: relative;
+
     img {
       min-width: 100%;
     }
@@ -24,6 +26,12 @@
       .card-text.size {
         display: inline-block;
       }
+    }
+
+    .button_delete {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
     }
   }
 }
