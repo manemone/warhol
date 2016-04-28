@@ -1,6 +1,7 @@
 .card-group
   .card.image
-    = image_tag @image.image.url, class: "card-img img-fluid"
+    = lazy_image_resource @image, :image, class: "card-img"
+
   .card.info
     .card-block
       .card-text
