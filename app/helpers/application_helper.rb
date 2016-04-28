@@ -1,7 +1,9 @@
 module ApplicationHelper
-  def lazy_image_resource(model, version, options={})
+  def lazy_image_resource(model, uploader=:image, version=nil, options={})
+    url = version.present? ? model.send(uploader)&.send(version)&.url : model.send(uploader)&.url
+
     options.tap do |h|
-      h[:"data-original"] = model.send(version)&.url
+      h[:"data-original"] = url
       h[:class] = "lazy #{h[:class]}"
     end
 

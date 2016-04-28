@@ -55,6 +55,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # store image dimensions
   process :store_dimensions
 
+  THUMBNAIL_SIZE = 640
+  version :thumbnail do
+    resize_to_limit THUMBNAIL_SIZE, THUMBNAIL_SIZE
+  end
+
   private
 
   def store_dimensions

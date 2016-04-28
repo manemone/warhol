@@ -19,7 +19,7 @@
     .card-columns
       - @images.each do |image|
         .card.card-inverse.image
-          = lazy_image_resource image, :image, class: "card-img"
+          = lazy_image_resource image, :image, :thumbnail, class: "card-img"
           = link_to image_path(image), class: "card-img-overlay image-info" do
             %p.card-text.size
               = "#{image.width}x#{image.height}"
