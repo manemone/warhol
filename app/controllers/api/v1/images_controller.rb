@@ -17,6 +17,16 @@ class Api::V1::ImagesController < Api::V1::ApplicationController
     end
   end
 
+  def destroy
+    begin
+      @image = Image.find(params[:id]).destroy!
+    rescue ActiveRecord::RecordNotFound
+      render json: { status: '404', message: "image not found" }
+    rescue
+      render json: { status: '500', message: "oops!" }
+    end
+  end
+
   private
 
   def image_params
