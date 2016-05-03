@@ -1,21 +1,24 @@
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-
-development:
+default: &pg_default
   adapter: postgresql
   encoding: unicode
-  database: warhol
   pool: 5
+
+development:
+  <<: *pg_default
+  database: warhol
   username: warhol
   password:
   host: localhost
 
 test:
-  <<: *default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  <<: *pg_default
+  database: <%= ENV['PRODUCTION_DATABASE_NAME'] %>
+  username: <%= ENV['PRODUCTION_DATABASE_USERNAME'] %>
+  password: <%= ENV['PRODUCTION_DATABASE_PASSWORD'] %>
+  host: <%= ENV['PRODUCTION_DATABASE_HOST'] %>
