@@ -20,7 +20,8 @@
 
 $(document).on('ready page:load', function() {
   $("img.lazy").lazyload({
-    threshold: 200,
-    failure_limit : 10
+    threshold:     200,
+    failure_limit: 10,
+    effect:        "fadeIn"
   });
 });
