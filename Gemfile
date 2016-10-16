@@ -35,6 +35,7 @@ gem 'unicorn'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem "fog", "~> 1.3"
 
 gem 'haml-rails'
 gem 'erb2haml'
